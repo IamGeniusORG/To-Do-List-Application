@@ -2,7 +2,7 @@
 
 A premium, feature-rich To-Do List application built with Vanilla JavaScript, HTML5, and CSS3. Designed with a stunning glassmorphism aesthetic, dynamic micro-animations, and powerful productivity features.
 
-![UI Preview](Screenshot%202026-06-15%20124615.png)
+![UI Preview](https://via.placeholder.com/800x400.png?text=Pro+To-Do+App+Preview)
 
 ## 🌟 Features
 
