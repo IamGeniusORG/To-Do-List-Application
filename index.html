@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate To-Do App</title>
+    <meta name="description" content="An advanced, beautiful To-Do application.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Canvas Confetti for celebrations -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Pro Tasks</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p class="subtitle" id="progress-text">0% Completed</p>
+        </header>
+
+        <form id="task-form" class="task-form">
+            <div class="input-main">
+                <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off" required>
+            </div>
+            <div class="input-options">
+                <select id="priority-input" class="modern-select" title="Set Priority">
+                    <option value="low">💧 Low</option>
+                    <option value="medium" selected>⚡ Medium</option>
+                    <option value="high">🔥 High</option>
+                </select>
+                <input type="date" id="date-input" class="modern-date" title="Set Due Date">
+                <button type="submit" id="add-btn" class="add-btn" title="Add Task">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+        </form>
+
+        <div class="controls-bar">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Done</button>
+            </div>
+            <div class="sort-options">
+                <select id="sort-select" class="modern-select minimal">
+                    <option value="date-added">Sort: Newest</option>
+                    <option value="priority">Sort: Priority</option>
+                    <option value="due-date">Sort: Due Date</option>
+                </select>
+            </div>
+        </div>
+
+        <ul id="task-list" class="task-list">
+            <!-- Tasks injected via JS -->
+        </ul>
+        
+        <div class="stats">
+            <span id="task-count">0 tasks left</span>
+            <button id="clear-completed" class="clear-btn">Clear Completed</button>
+        </div>
+    </div>
+
+    <!-- Edit Modal Overlay -->
+    <div id="edit-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <form id="edit-form" class="edit-form">
+                <input type="text" id="edit-input" required>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-edit" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
